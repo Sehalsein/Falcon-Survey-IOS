@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		56018D4B1D37C4F600A082AE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56018D4A1D37C4F600A082AE /* LoginViewController.swift */; };
+		56044D211D47D4EF0083B67D /* WeatherSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56044D201D47D4EF0083B67D /* WeatherSurveyViewController.swift */; };
+		56044D231D47F51D0083B67D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56044D221D47F51D0083B67D /* GoogleService-Info.plist */; };
+		564125181D3A7F31007369C9 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564125171D3A7F31007369C9 /* StatusViewController.swift */; };
+		5641251C1D3A82FA007369C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5641251B1D3A82FA007369C9 /* Assets.xcassets */; };
+		564DA83D1D34F631000D656D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DA83C1D34F631000D656D /* AppDelegate.swift */; };
+		564DA83F1D34F631000D656D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DA83E1D34F631000D656D /* ViewController.swift */; };
+		564DA8421D34F631000D656D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564DA8401D34F631000D656D /* Main.storyboard */; };
+		564DA8471D34F631000D656D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564DA8451D34F631000D656D /* LaunchScreen.storyboard */; };
+		6B3D6016CC94282355C6BDAD /* Pods_FalconSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0341EED36A0F86B25625D890 /* Pods_FalconSurvey.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0341EED36A0F86B25625D890 /* Pods_FalconSurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FalconSurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56018D461D378E6000A082AE /* FalconSurvey-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FalconSurvey-Bridging-Header.h"; sourceTree = "<group>"; };
+		56018D4A1D37C4F600A082AE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		56044D201D47D4EF0083B67D /* WeatherSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSurveyViewController.swift; sourceTree = "<group>"; };
+		56044D221D47F51D0083B67D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		564125171D3A7F31007369C9 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		5641251B1D3A82FA007369C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		564DA8391D34F631000D656D /* FalconSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FalconSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		564DA83C1D34F631000D656D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		564DA83E1D34F631000D656D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		564DA8411D34F631000D656D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		564DA8461D34F631000D656D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		564DA8481D34F631000D656D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72463081F72FF0BB7D2D7176 /* Pods-FalconSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FalconSurvey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FalconSurvey/Pods-FalconSurvey.debug.xcconfig"; sourceTree = "<group>"; };
+		CACC392C7A6404BD12F3078B /* Pods-FalconSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FalconSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-FalconSurvey/Pods-FalconSurvey.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		564DA8361D34F631000D656D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B3D6016CC94282355C6BDAD /* Pods_FalconSurvey.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56121F491D40B4F6003853F8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				564DA83E1D34F631000D656D /* ViewController.swift */,
+				56018D4A1D37C4F600A082AE /* LoginViewController.swift */,
+				564125171D3A7F31007369C9 /* StatusViewController.swift */,
+				56044D201D47D4EF0083B67D /* WeatherSurveyViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		564DA8301D34F631000D656D = {
+			isa = PBXGroup;
+			children = (
+				564DA83B1D34F631000D656D /* FalconSurvey */,
+				564DA83A1D34F631000D656D /* Products */,
+				C362082D8C315A095B9797B4 /* Pods */,
+				D1927497F39565A2ED7D334F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		564DA83A1D34F631000D656D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				564DA8391D34F631000D656D /* FalconSurvey.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		564DA83B1D34F631000D656D /* FalconSurvey */ = {
+			isa = PBXGroup;
+			children = (
+				56121F491D40B4F6003853F8 /* Controller */,
+				56044D221D47F51D0083B67D /* GoogleService-Info.plist */,
+				564DA83C1D34F631000D656D /* AppDelegate.swift */,
+				564DA8401D34F631000D656D /* Main.storyboard */,
+				564DA8451D34F631000D656D /* LaunchScreen.storyboard */,
+				564DA8481D34F631000D656D /* Info.plist */,
+				56018D461D378E6000A082AE /* FalconSurvey-Bridging-Header.h */,
+				5641251B1D3A82FA007369C9 /* Assets.xcassets */,
+			);
+			path = FalconSurvey;
+			sourceTree = "<group>";
+		};
+		C362082D8C315A095B9797B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72463081F72FF0BB7D2D7176 /* Pods-FalconSurvey.debug.xcconfig */,
+				CACC392C7A6404BD12F3078B /* Pods-FalconSurvey.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D1927497F39565A2ED7D334F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0341EED36A0F86B25625D890 /* Pods_FalconSurvey.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		564DA8381D34F631000D656D /* FalconSurvey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 564DA84B1D34F631000D656D /* Build configuration list for PBXNativeTarget "FalconSurvey" */;
+			buildPhases = (
+				D908ED0A1CF04B6AEDB3F154 /* [CP] Check Pods Manifest.lock */,
+				564DA8351D34F631000D656D /* Sources */,
+				564DA8361D34F631000D656D /* Frameworks */,
+				564DA8371D34F631000D656D /* Resources */,
+				CCFD0E2369CB3F11A67DBCA5 /* [CP] Embed Pods Frameworks */,
+				B1994DB7D80EBC54B1DE8A04 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FalconSurvey;
+			productName = FalconSurvey;
+			productReference = 564DA8391D34F631000D656D /* FalconSurvey.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		564DA8311D34F631000D656D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Sehal;
+				TargetAttributes = {
+					564DA8381D34F631000D656D = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = X752C5G9RF;
+					};
+				};
+			};
+			buildConfigurationList = 564DA8341D34F631000D656D /* Build configuration list for PBXProject "FalconSurvey" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 564DA8301D34F631000D656D;
+			productRefGroup = 564DA83A1D34F631000D656D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				564DA8381D34F631000D656D /* FalconSurvey */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		564DA8371D34F631000D656D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				564DA8471D34F631000D656D /* LaunchScreen.storyboard in Resources */,
+				56044D231D47F51D0083B67D /* GoogleService-Info.plist in Resources */,
+				5641251C1D3A82FA007369C9 /* Assets.xcassets in Resources */,
+				564DA8421D34F631000D656D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1994DB7D80EBC54B1DE8A04 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FalconSurvey/Pods-FalconSurvey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCFD0E2369CB3F11A67DBCA5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FalconSurvey/Pods-FalconSurvey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D908ED0A1CF04B6AEDB3F154 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		564DA8351D34F631000D656D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56044D211D47D4EF0083B67D /* WeatherSurveyViewController.swift in Sources */,
+				56018D4B1D37C4F600A082AE /* LoginViewController.swift in Sources */,
+				564DA83F1D34F631000D656D /* ViewController.swift in Sources */,
+				564DA83D1D34F631000D656D /* AppDelegate.swift in Sources */,
+				564125181D3A7F31007369C9 /* StatusViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		564DA8401D34F631000D656D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				564DA8411D34F631000D656D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		564DA8451D34F631000D656D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				564DA8461D34F631000D656D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		564DA8491D34F631000D656D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		564DA84A1D34F631000D656D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		564DA84C1D34F631000D656D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72463081F72FF0BB7D2D7176 /* Pods-FalconSurvey.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = FalconSurvey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sehalsein.Falcon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "FalconSurvey/FalconSurvey-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		564DA84D1D34F631000D656D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CACC392C7A6404BD12F3078B /* Pods-FalconSurvey.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = FalconSurvey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sehalsein.Falcon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "FalconSurvey/FalconSurvey-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		564DA8341D34F631000D656D /* Build configuration list for PBXProject "FalconSurvey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				564DA8491D34F631000D656D /* Debug */,
+				564DA84A1D34F631000D656D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		564DA84B1D34F631000D656D /* Build configuration list for PBXNativeTarget "FalconSurvey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				564DA84C1D34F631000D656D /* Debug */,
+				564DA84D1D34F631000D656D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 564DA8311D34F631000D656D /* Project object */;
+}
