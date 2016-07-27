@@ -10,11 +10,11 @@
 		56018D4B1D37C4F600A082AE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56018D4A1D37C4F600A082AE /* LoginViewController.swift */; };
 		56044D211D47D4EF0083B67D /* WeatherSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56044D201D47D4EF0083B67D /* WeatherSurveyViewController.swift */; };
 		56044D231D47F51D0083B67D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56044D221D47F51D0083B67D /* GoogleService-Info.plist */; };
+		561C03B81D48BABC008B593C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561C03B71D48BABC008B593C /* Main.storyboard */; };
 		564125181D3A7F31007369C9 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564125171D3A7F31007369C9 /* StatusViewController.swift */; };
 		5641251C1D3A82FA007369C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5641251B1D3A82FA007369C9 /* Assets.xcassets */; };
 		564DA83D1D34F631000D656D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DA83C1D34F631000D656D /* AppDelegate.swift */; };
 		564DA83F1D34F631000D656D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DA83E1D34F631000D656D /* ViewController.swift */; };
-		564DA8421D34F631000D656D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564DA8401D34F631000D656D /* Main.storyboard */; };
 		564DA8471D34F631000D656D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564DA8451D34F631000D656D /* LaunchScreen.storyboard */; };
 		6B3D6016CC94282355C6BDAD /* Pods_FalconSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0341EED36A0F86B25625D890 /* Pods_FalconSurvey.framework */; };
 /* End PBXBuildFile section */
@@ -25,12 +25,12 @@
 		56018D4A1D37C4F600A082AE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56044D201D47D4EF0083B67D /* WeatherSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherSurveyViewController.swift; sourceTree = "<group>"; };
 		56044D221D47F51D0083B67D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		561C03B71D48BABC008B593C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../Desktop/Main.storyboard; sourceTree = "<group>"; };
 		564125171D3A7F31007369C9 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		5641251B1D3A82FA007369C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		564DA8391D34F631000D656D /* FalconSurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FalconSurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		564DA83C1D34F631000D656D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564DA83E1D34F631000D656D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		564DA8411D34F631000D656D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		564DA8461D34F631000D656D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		564DA8481D34F631000D656D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72463081F72FF0BB7D2D7176 /* Pods-FalconSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FalconSurvey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FalconSurvey/Pods-FalconSurvey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,11 +84,11 @@
 				56121F491D40B4F6003853F8 /* Controller */,
 				56044D221D47F51D0083B67D /* GoogleService-Info.plist */,
 				564DA83C1D34F631000D656D /* AppDelegate.swift */,
-				564DA8401D34F631000D656D /* Main.storyboard */,
+				561C03B71D48BABC008B593C /* Main.storyboard */,
 				564DA8451D34F631000D656D /* LaunchScreen.storyboard */,
 				564DA8481D34F631000D656D /* Info.plist */,
-				56018D461D378E6000A082AE /* FalconSurvey-Bridging-Header.h */,
 				5641251B1D3A82FA007369C9 /* Assets.xcassets */,
+				56018D461D378E6000A082AE /* FalconSurvey-Bridging-Header.h */,
 			);
 			path = FalconSurvey;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 				TargetAttributes = {
 					564DA8381D34F631000D656D = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = X752C5G9RF;
+						DevelopmentTeam = KQQ92R244D;
 					};
 				};
 			};
@@ -175,7 +175,7 @@
 				564DA8471D34F631000D656D /* LaunchScreen.storyboard in Resources */,
 				56044D231D47F51D0083B67D /* GoogleService-Info.plist in Resources */,
 				5641251C1D3A82FA007369C9 /* Assets.xcassets in Resources */,
-				564DA8421D34F631000D656D /* Main.storyboard in Resources */,
+				561C03B81D48BABC008B593C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,14 +245,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		564DA8401D34F631000D656D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				564DA8411D34F631000D656D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		564DA8451D34F631000D656D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

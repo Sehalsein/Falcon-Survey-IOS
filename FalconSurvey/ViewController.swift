@@ -487,7 +487,7 @@ class ViewController: UIViewController {
             let key = rootReference.child("posts").childByAutoId().key
             let surveyData=["userId": vUserId,
                             "name":vName,
-                            "date":vDate,
+                            "date":getDate(),
                             "quetion1": Quetion1,
                             "quetion1Reason": vQuetion1Reason,
                             "quetion2Visibility": vQuetion2Visibility,
@@ -539,7 +539,8 @@ class ViewController: UIViewController {
             ]
            
             let childUpdates = ["/posts/\(key)": surveyData,
-                                "/userposts/\(vUserId)/\(key)/": surveyData
+                                "/userposts/\(vUserId)/\(key)/": surveyData,
+                                //"/surveyposts/\(key)": surveyData,
             ]
             
             rootReference.updateChildValues(childUpdates)
@@ -994,7 +995,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func getDate() {
+    func getDate() -> Int {
         
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
@@ -1007,6 +1008,8 @@ class ViewController: UIViewController {
         let vDay = String(format: "%02d", day)
         
         vDate = "\(year)" + vMonth + vDay
+        
+        return Int(vDate)!
     }
 
     override func didReceiveMemoryWarning() {
