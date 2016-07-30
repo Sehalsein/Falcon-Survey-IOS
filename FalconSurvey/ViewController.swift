@@ -660,10 +660,18 @@ class ViewController: UIViewController {
                 
             ]
             
-            let childUpdates = ["/flightreport/\(key)": surveyData,
-                                "/userposts/\(vUserId)/\(key)/": surveyData,
-                                //"/surveyposts/\(key)": surveyData,
+            let postDetail = ["userId": vUserId,
+                              "name": vName,
+                              "date": getDate(),
+                              "key" : key,
+                              "type" : "flightreport"
             ]
+            
+            
+            let childUpdates = [ "/posts/\(key)": postDetail,
+                                 "/userposts/\(vUserId)/\(key)/": surveyData,
+                                 "/flightreport/\(key)": surveyData,
+                                 ]
             
             rootReference.updateChildValues(childUpdates)
             print("Complete")

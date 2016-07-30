@@ -10,14 +10,14 @@ import UIKit
 import Firebase
 
 class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource{
-
+    
     @IBOutlet weak var weatherDelay: UIButton!
     @IBOutlet weak var weatherCancelation: UIButton!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var pilotName: UILabel!
     @IBOutlet weak var timeReport: UILabel!
     @IBOutlet weak var aircraftId: UIPickerView!
-
+    
     @IBOutlet weak var quetion1OmdbVfr: UIButton!
     @IBOutlet weak var quetion1OmdbMvfr: UIButton!
     @IBOutlet weak var quetion1OmdbIfr: UIButton!
@@ -56,12 +56,12 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
     @IBOutlet weak var nextReportTimeLabel: UILabel!
     
     @IBOutlet weak var comment: UITextView!
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     
     let rootReference = FIRDatabase.database().reference()
-
+    
     var condition = "nill"
     
     var vDate = 0000
@@ -115,7 +115,7 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title = "Weather Delay / Cancelation"
         
         localTimeReport = NA
@@ -127,6 +127,9 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         timeReport.text = getDateandTime("time")
         vTimeReport=getDateandTime("time")
         
+        weatherCancelation.selected = true
+        condition = delay
+        
         // Do any additional setup after loading the view.
     }
     
@@ -134,7 +137,7 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         //print("TITLE")
         return aircraftIdArray[row]
     }
-
+    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return aircraftIdArray.count
     }
@@ -161,13 +164,13 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         nextReportTimeLabel.hidden = false
         nextReportTime.hidden = false
     }
-   
+    
     @IBAction func weatherCancelation(sender: AnyObject) {
         condition = cancel
         nextReportTimeLabel.hidden = true
         nextReportTime.hidden = true
     }
-
+    
     @IBAction func quetion1OmdbVfr(sender: AnyObject) {
         answer1Omdb=vfr
     }
@@ -195,7 +198,7 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
     }
     
     @IBAction func quetion2OmdbVfr(sender: AnyObject) {
-         answer2Omdb=vfr
+        answer2Omdb=vfr
     }
     @IBAction func quetion2OmdbMvfr(sender: AnyObject) {
         answer2Omdb=mvfr
@@ -244,31 +247,37 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
             let vUserId = "AS"
             let key = rootReference.child("posts").childByAutoId().key
             let weatherData=["userId": vUserId,
-                            "name":vPilotName,
-                            "date":getDate(),
-                            "aircraftID": vAircraftId,
-                            "timeOfReport": vTimeReport,
-                            "answer1Omdb": answer1Omdb,
-                            "answer1OmdbVisibility": answer1OmdbVisibility,
-                            "answer1OmdbCloudBase": answer1OmdbCloudBase,
-                            "answer1Omdw": answer1Omdw,
-                            "answer1OmdwVisibility": answer1OmdwVisibility,
-                            "answer1OmdwCloudBase": answer1OmdwCloudBase,
-                            "answer2Omdb": answer2Omdb,
-                            "answer2OmdbVisibility": answer2OmdbVisibility,
-                            "answer2OmdbCloudBase": answer2OmdbCloudBase,
-                            "answer2Mbz": answer2Mbz,
-                            "answer2MbzVisibility": answer2MbzVisibility,
-                            "answer2MbzCloudBase": answer2MbzCloudBase,
-                            "answer3Omdb": answer3Omdb,
-                            "answer3Omdw": answer3Omdw,
-                            "localTimeReport": localTimeReport,
-                            "comment": vComment,
-                            "key":key
+                             "name":vPilotName,
+                             "date":getDate(),
+                             "aircraftID": vAircraftId,
+                             "timeOfReport": vTimeReport,
+                             "answer1Omdb": answer1Omdb,
+                             "answer1OmdbVisibility": answer1OmdbVisibility,
+                             "answer1OmdbCloudBase": answer1OmdbCloudBase,
+                             "answer1Omdw": answer1Omdw,
+                             "answer1OmdwVisibility": answer1OmdwVisibility,
+                             "answer1OmdwCloudBase": answer1OmdwCloudBase,
+                             "answer2Omdb": answer2Omdb,
+                             "answer2OmdbVisibility": answer2OmdbVisibility,
+                             "answer2OmdbCloudBase": answer2OmdbCloudBase,
+                             "answer2Mbz": answer2Mbz,
+                             "answer2MbzVisibility": answer2MbzVisibility,
+                             "answer2MbzCloudBase": answer2MbzCloudBase,
+                             "answer3Omdb": answer3Omdb,
+                             "answer3Omdw": answer3Omdw,
+                             "localTimeReport": localTimeReport,
+                             "comment": vComment,
+                             "key":key
                 
             ]
+            let postDetail = ["userId": vUserId,
+                              "name": vPilotName,
+                              "date": getDate(),
+                              "key" : key,
+                              "type" : "weatherposts"
+            ]
             
-            let childUpdates = [//"/posts/\(key)": weatherData,
+            let childUpdates = ["/posts/\(key)": postDetail,
                                 "/userposts/\(vUserId)/\(key)/": weatherData,
                                 "/weatherposts/\(key)": weatherData
             ]
@@ -276,7 +285,7 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
             rootReference.updateChildValues(childUpdates)
             print("Complete")
             self.performSegueWithIdentifier("submitSegue", sender: self)
-
+            
         }else{
             // create the alert
             let alert = UIAlertController(title: "Alert!", message: "Please fill all fields.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -291,10 +300,10 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         
         if quetion1OmdbVisibility.text!.isEmpty {
             answer1OmdbVisibility="nill"
-//            quetion1OmdbVisibility.layer.borderWidth = 2
-//            quetion1OmdbVisibility.layer.borderColor = UIColor.redColor().CGColor
-//            quetion1OmdbVisibility.layer.cornerRadius = 2
-
+            //            quetion1OmdbVisibility.layer.borderWidth = 2
+            //            quetion1OmdbVisibility.layer.borderColor = UIColor.redColor().CGColor
+            //            quetion1OmdbVisibility.layer.cornerRadius = 2
+            
             print("Quetion 1 OMDB VISIBILITY : Please Enter")
         }else{
             answer1OmdbVisibility=quetion1OmdbVisibility.text!
@@ -302,28 +311,28 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         if quetion1OmdbCloudBase.text!.isEmpty {
             print("AD")
             answer1OmdbCloudBase="nill"
-//            quetion1OmdbCloudBase.layer.borderWidth = 2
-//            quetion1OmdbCloudBase.layer.borderColor = UIColor.redColor().CGColor
-//            quetion1OmdbCloudBase.layer.cornerRadius = 2
+            //            quetion1OmdbCloudBase.layer.borderWidth = 2
+            //            quetion1OmdbCloudBase.layer.borderColor = UIColor.redColor().CGColor
+            //            quetion1OmdbCloudBase.layer.cornerRadius = 2
             print("Quetion 1 OMDB CLOUD : Please Enter")
         }else{
             answer1OmdbCloudBase=quetion1OmdbCloudBase.text!
         }
-      
+        
         if quetion1OmdwVisibility.text!.isEmpty {
             answer1OmdwVisibility="nill"
-//            quetion1OmdwVisibility.layer.borderWidth = 2
-//            quetion1OmdwVisibility.layer.borderColor = UIColor.redColor().CGColor
-//            quetion1OmdwVisibility.layer.cornerRadius = 2
+            //            quetion1OmdwVisibility.layer.borderWidth = 2
+            //            quetion1OmdwVisibility.layer.borderColor = UIColor.redColor().CGColor
+            //            quetion1OmdwVisibility.layer.cornerRadius = 2
             print("Quetion 1 OMDW VISIBILITY : Please Enter")
         }else{
             answer1OmdwVisibility=quetion1OmdwVisibility.text!
         }
         if quetion1OmdwCloudBase.text!.isEmpty {
             answer1OmdwCloudBase="nill"
-//            quetion1OmdwCloudBase.layer.borderWidth = 2
-//            quetion1OmdwCloudBase.layer.borderColor = UIColor.redColor().CGColor
-//            quetion1OmdwCloudBase.layer.cornerRadius = 2
+            //            quetion1OmdwCloudBase.layer.borderWidth = 2
+            //            quetion1OmdwCloudBase.layer.borderColor = UIColor.redColor().CGColor
+            //            quetion1OmdwCloudBase.layer.cornerRadius = 2
             print("Quetion 1 OMDW CLOUD : Please Enter")
         }else{
             answer1OmdwCloudBase=quetion1OmdwCloudBase.text!
@@ -331,9 +340,9 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         
         if quetion2OmdbVisibility.text!.isEmpty {
             answer2OmdbVisibility="nill"
-//            quetion2OmdbVisibility.layer.borderWidth = 2
-//            quetion2OmdbVisibility.layer.borderColor = UIColor.redColor().CGColor
-//            quetion2OmdbVisibility.layer.cornerRadius = 2
+            //            quetion2OmdbVisibility.layer.borderWidth = 2
+            //            quetion2OmdbVisibility.layer.borderColor = UIColor.redColor().CGColor
+            //            quetion2OmdbVisibility.layer.cornerRadius = 2
             print("Quetion 2 OMDW VISIBILITY : Please Enter")
         }else{
             answer2OmdbVisibility=quetion2OmdbVisibility.text!
@@ -363,7 +372,7 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         }else{
             vComment=comment.text
         }
-    
+        
         vAircraftId = aircraftIdArray[aircraftIdIndex]
         
         if(vAircraftId != "nill"
@@ -432,9 +441,9 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         
         var value = "nill"
         if condition == "date"{
-             value = vDay + "-" + vMonth + "-" + "\(year)"
+            value = vDay + "-" + vMonth + "-" + "\(year)"
         }else if condition == "time"{
-             value = "\(hour)"+" : "+"\(minutes)"
+            value = "\(hour)"+" : "+"\(minutes)"
         }
         
         return value

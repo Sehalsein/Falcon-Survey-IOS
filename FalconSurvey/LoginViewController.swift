@@ -10,13 +10,13 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var progressView: UIActivityIndicatorView!
- 
+    
     @IBOutlet weak var baseConstraint: NSLayoutConstraint!
-   
+    
     
     
     var vEmail: String?
@@ -60,14 +60,14 @@ class LoginViewController: UIViewController {
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-   
+    
     
     @IBAction func login(sender: AnyObject) {
         
@@ -76,36 +76,36 @@ class LoginViewController: UIViewController {
         progressView.startAnimating()
         progressView.hidden=false
         
-//        FIRAuth.auth()?.signInWithEmail(vEmail!, password: vPassword!, completion: { (user, error) in
-//            if error != nil {
-//                print("Login Failed")
-//                let alert = UIAlertController(title: "Alert!", message: "Email Id or Password not Valid.", preferredStyle: UIAlertControllerStyle.Alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-//                self.presentViewController(alert, animated: true, completion: nil)
-//                self.progressView.stopAnimating()
-//                self.progressView.hidden=true
-//            }else{
-//                    FIRDatabase.database().reference().child("user").child((user?.uid)!).observeEventType(.Value, withBlock:{ (snapshot) in
-//                    let Admin=snapshot.value!["privilege"] as? String
-//                    if(Admin == "user"){
-//                        print("SUCCESFULL")
-//                        print("SignIn")
-//                        self.progressView.stopAnimating()
-//                        self.progressView.hidden=true
-                      self.performSegueWithIdentifier("loginSegue", sender: self)
-//                    }else{
-//                        let alert = UIAlertController(title: "Alert!", message: "Access Denied!", preferredStyle: UIAlertControllerStyle.Alert)
-//                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-//                        self.presentViewController(alert, animated: true, completion: nil)
-//                        self.progressView.stopAnimating()
-//                        self.progressView.hidden=true
-//                        print("NOT ENOUGH ACCESS")
-//                    }
-//                    },withCancelBlock: nil)
-//            }
-//        })
+        //        FIRAuth.auth()?.signInWithEmail(vEmail!, password: vPassword!, completion: { (user, error) in
+        //            if error != nil {
+        //                print("Login Failed")
+        //                let alert = UIAlertController(title: "Alert!", message: "Email Id or Password not Valid.", preferredStyle: UIAlertControllerStyle.Alert)
+        //                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        //                self.presentViewController(alert, animated: true, completion: nil)
+        //                self.progressView.stopAnimating()
+        //                self.progressView.hidden=true
+        //            }else{
+        //                    FIRDatabase.database().reference().child("user").child((user?.uid)!).observeEventType(.Value, withBlock:{ (snapshot) in
+        //                    let Admin=snapshot.value!["privilege"] as? String
+        //                    if(Admin == "user"){
+        //                        print("SUCCESFULL")
+        //                        print("SignIn")
+        //                        self.progressView.stopAnimating()
+        //                        self.progressView.hidden=true
+        self.performSegueWithIdentifier("loginSegue", sender: self)
+        //                    }else{
+        //                        let alert = UIAlertController(title: "Alert!", message: "Access Denied!", preferredStyle: UIAlertControllerStyle.Alert)
+        //                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        //                        self.presentViewController(alert, animated: true, completion: nil)
+        //                        self.progressView.stopAnimating()
+        //                        self.progressView.hidden=true
+        //                        print("NOT ENOUGH ACCESS")
+        //                    }
+        //                    },withCancelBlock: nil)
+        //            }
+        //        })
     }
-
     
-
+    
+    
 }
