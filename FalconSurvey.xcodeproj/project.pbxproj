@@ -16,6 +16,8 @@
 		564DA83D1D34F631000D656D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DA83C1D34F631000D656D /* AppDelegate.swift */; };
 		564DA83F1D34F631000D656D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564DA83E1D34F631000D656D /* ViewController.swift */; };
 		564DA8471D34F631000D656D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564DA8451D34F631000D656D /* LaunchScreen.storyboard */; };
+		56A2E3421D490FC8003412A5 /* TechnicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2E3411D490FC8003412A5 /* TechnicalViewController.swift */; };
+		56A2E3441D491FCD003412A5 /* OptionSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A2E3431D491FCD003412A5 /* OptionSurveyViewController.swift */; };
 		6B3D6016CC94282355C6BDAD /* Pods_FalconSurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0341EED36A0F86B25625D890 /* Pods_FalconSurvey.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		564DA83E1D34F631000D656D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		564DA8461D34F631000D656D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		564DA8481D34F631000D656D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56A2E3411D490FC8003412A5 /* TechnicalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TechnicalViewController.swift; sourceTree = "<group>"; };
+		56A2E3431D491FCD003412A5 /* OptionSurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSurveyViewController.swift; sourceTree = "<group>"; };
 		72463081F72FF0BB7D2D7176 /* Pods-FalconSurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FalconSurvey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FalconSurvey/Pods-FalconSurvey.debug.xcconfig"; sourceTree = "<group>"; };
 		CACC392C7A6404BD12F3078B /* Pods-FalconSurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FalconSurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-FalconSurvey/Pods-FalconSurvey.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,6 +60,8 @@
 				56018D4A1D37C4F600A082AE /* LoginViewController.swift */,
 				564125171D3A7F31007369C9 /* StatusViewController.swift */,
 				56044D201D47D4EF0083B67D /* WeatherSurveyViewController.swift */,
+				56A2E3411D490FC8003412A5 /* TechnicalViewController.swift */,
+				56A2E3431D491FCD003412A5 /* OptionSurveyViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -234,10 +240,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56A2E3441D491FCD003412A5 /* OptionSurveyViewController.swift in Sources */,
 				56044D211D47D4EF0083B67D /* WeatherSurveyViewController.swift in Sources */,
 				56018D4B1D37C4F600A082AE /* LoginViewController.swift in Sources */,
 				564DA83F1D34F631000D656D /* ViewController.swift in Sources */,
 				564DA83D1D34F631000D656D /* AppDelegate.swift in Sources */,
+				56A2E3421D490FC8003412A5 /* TechnicalViewController.swift in Sources */,
 				564125181D3A7F31007369C9 /* StatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -116,6 +116,8 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Weather Delay / Cancelation"
+        
         localTimeReport = NA
         scrollView.contentSize.height=1600
         aircraftId.delegate = self
