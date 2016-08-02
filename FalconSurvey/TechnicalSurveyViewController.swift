@@ -62,6 +62,7 @@ class TechnicalSurveyViewController: UIViewController,UIPickerViewDelegate,UIPic
     var answer4 = "null"
     let delay = "delay"
     let cancel = "cancel"
+    var vUserId = "null"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,12 +75,16 @@ class TechnicalSurveyViewController: UIViewController,UIPickerViewDelegate,UIPic
         aircraftId.delegate = self
         aircraftId.dataSource = self
         
+        checkIfSignedIn()
+        
+        pilotName.text = vPilotName
+        
         date.text = getDateandTime("date")
         timeofReport.text = getDateandTime("time")
         vTimeOfReport=getDateandTime("time")
         
         technicalCancelation.selected = true
-        condition = delay
+        condition = cancel
         
         // Do any additional setup after loading the view.
     }
@@ -134,9 +139,8 @@ class TechnicalSurveyViewController: UIViewController,UIPickerViewDelegate,UIPic
         
         if validate(){
             print("Successfull")
-            let vUserId = "AS"
             let key = rootReference.child("posts").childByAutoId().key
-            let weatherData=["userId": vUserId,
+            let technicalData=["userId": vUserId,
                              "name":vPilotName,
                              "date":getDate(),
                              "aircraftID": aircraftIdArray[aircraftIdIndex],
@@ -158,17 +162,28 @@ class TechnicalSurveyViewController: UIViewController,UIPickerViewDelegate,UIPic
             ]
             
             let childUpdates = ["/posts/\(key)": postDetail,
-                                "/userposts/\(vUserId)/\(key)/": weatherData,
-                                "/technicalposts/\(key)": weatherData
+                                "/userposts/\(vUserId)/\(key)/": postDetail,
+                                "/userpoststechnicalreport/\(vUserId)/\(key)/": technicalData,
+                                "/technicalposts/\(key)": technicalData
             ]
             
             rootReference.updateChildValues(childUpdates)
+            self.performSegueWithIdentifier("submitSegue", sender: self)
             print("Complete")
             
         }else{
             print("Unsuccessfull")
         }
         logdisplay()
+    }
+    func checkIfSignedIn() {
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            vUserId = user.uid
+            vPilotName = user.displayName!
+        } else {
+            print("NO USER")
+        }
     }
     
     func validate() -> Bool {

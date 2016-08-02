@@ -103,6 +103,8 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
     let no = "NO"
     let NA = "Not Applicable"
     
+    var vUserId = "null"
+    
     var aircraftIdArray = ["A6-FLI",
                            "A6-FLY",
                            "A6-FLB",
@@ -118,19 +120,50 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         
         self.title = "Weather Delay / Cancelation"
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardFrameWillChange(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        
         localTimeReport = NA
-        scrollView.contentSize.height=1600
+        //scrollView.contentSize.height=1600
         aircraftId.delegate = self
         aircraftId.dataSource = self
+        checkIfSignedIn()
         
+        pilotName.text = vPilotName
         date.text = getDateandTime("date")
         timeReport.text = getDateandTime("time")
         vTimeReport=getDateandTime("time")
         
         weatherCancelation.selected = true
-        condition = delay
+        condition = cancel
         
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func keyboardFrameWillChange(notification: NSNotification) {
+        let keyboardBeginFrame = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardFrameBeginUserInfoKey)!.CGRectValue
+        let keyboardEndFrame = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardFrameEndUserInfoKey)!.CGRectValue
+        
+        let animationCurve = UIViewAnimationCurve(rawValue: (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationCurveUserInfoKey)!.integerValue)
+        
+        let animationDuration: NSTimeInterval = (notification.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationDurationUserInfoKey)!.doubleValue
+        
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(animationDuration)
+        UIView.setAnimationCurve(animationCurve!)
+        
+        var newFrame = self.view.frame
+        let keyboardFrameEnd = self.view.convertRect(keyboardEndFrame, toView: nil)
+        let keyboardFrameBegin = self.view.convertRect(keyboardBeginFrame, toView: nil)
+        
+        newFrame.origin.y -= (keyboardFrameBegin.origin.y - keyboardFrameEnd.origin.y)
+        self.view.frame = newFrame;
+        
+        UIView.commitAnimations()
+    }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -244,7 +277,7 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         print("Submit")
         if validate(){
             print("Validated")
-            let vUserId = "AS"
+            //vUserId = "AS"
             let key = rootReference.child("posts").childByAutoId().key
             let weatherData=["userId": vUserId,
                              "name":vPilotName,
@@ -278,13 +311,14 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
             ]
             
             let childUpdates = ["/posts/\(key)": postDetail,
-                                "/userposts/\(vUserId)/\(key)/": weatherData,
+                                "/userposts/\(vUserId)/\(key)/": postDetail,
+                                "/userpostsweatherreport/\(vUserId)/\(key)/": weatherData,
                                 "/weatherposts/\(key)": weatherData
             ]
             
-            rootReference.updateChildValues(childUpdates)
+            //rootReference.updateChildValues(childUpdates)
             print("Complete")
-            self.performSegueWithIdentifier("submitSegue", sender: self)
+            //self.performSegueWithIdentifier("submitSegue", sender: self)
             
         }else{
             // create the alert
@@ -423,6 +457,16 @@ class WeatherSurveyViewController: UIViewController, UIPickerViewDelegate,UIPick
         let Date = "\(year)" + vMonth + vDay
         
         return Int(Date)!
+    }
+    
+    func checkIfSignedIn() {
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            vUserId = user.uid
+            vPilotName = user.displayName!
+        } else {
+            print("NO USER")
+        }
     }
     
     func getDateandTime(condition : String) -> String {

@@ -669,7 +669,8 @@ class ViewController: UIViewController {
             
             
             let childUpdates = [ "/posts/\(key)": postDetail,
-                                 "/userposts/\(vUserId)/\(key)/": surveyData,
+                                 "/userposts/\(vUserId)/\(key)/": postDetail,
+                                 "/userpostsflightreport/\(vUserId)/\(key)/": surveyData,
                                  "/flightreport/\(key)": surveyData,
                                  ]
             

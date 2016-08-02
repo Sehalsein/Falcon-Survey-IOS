@@ -13,7 +13,7 @@ class OptionSurveyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Falcon Survey"
+        self.title = "Survey List"
         // Do any additional setup after loading the view.
     }
 
